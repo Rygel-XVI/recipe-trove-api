@@ -27,6 +27,10 @@ gem 'puma', '~> 3.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'rspec-rails',      ">= 2.0.0.beta"
+  gem 'annotate'
+  gem 'pry-byebug'
+  gem 'faker'
   gem 'byebug', platform: :mri
 end
 
