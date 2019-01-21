@@ -28,3 +28,8 @@ POST /api/recipes/:id
 POST /api/ingredients/:id
 DELETE /api/recipes/:id
 DELETE /api/ingredients/:id
+
+
+make routes
+make serializers
+make controller
