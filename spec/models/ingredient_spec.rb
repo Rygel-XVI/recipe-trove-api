@@ -6,6 +6,8 @@ RSpec.describe Ingredient, type: :model do
 
     @ingredient2 = Ingredient.create!(name: "Saffron, Coupe Grade Spanish", description: "This \"coupe\" grade Spanish saffron spice has powerful coloring properties and a lovely floral, grassy aroma. Due to its extremely rare nature, we were able to entice Julia Child into opening a one-pound tin for us during one of her visits to Milwaukee. Immediately upon opening, the exotic scent of these delicate flowers filled the air with their rare perfume, enchanting all of us! A signed tin remains with us as a memento of her visit.")
 
+    @ingredient3 = Ingredient.create(description: "this ingredient has no name and should not initialize")
+
     @recipe1 = Recipe.create!(name: "Sesame Chicken",
                               description: "If you want the perfect sesame chicken recipe this is it! You may want to increase the vinegar or lower the amount of sugar. It all depends on how sweet you want the sauce.",
                               rating: 4,
@@ -49,6 +51,10 @@ RSpec.describe Ingredient, type: :model do
   it 'has many recipes' do
     expect(@ingredient1.recipes).to include(@recipe1)
     expect(@ingredient1.recipes).to include(@recipe2)
+  end
+
+  it 'must have a name on creation' do
+    expect(@ingredient3.id).to eq(nil)
   end
 
 end
