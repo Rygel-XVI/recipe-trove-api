@@ -11,10 +11,9 @@ RSpec.describe Recipe, type: :model do
       @recipe2 = Recipe.new(name: "BBQ NY Strip",
         description: "A quick and easy way to make a tasty, tender steak on the grill! Marinate for a minimum of 2 hours.",
         rating: 3,
-        instructions: "
-        In a bowl, mix the olive oil, Worcestershire sauce, garlic, steak seasoning, red wine vinegar, basil, and Italian seasoning. Pour into a large resealable plastic bag. Pierce steaks on all sides with a fork, and place in the bag. Gently shake to coat. Seal bag and marinate steaks a minimum of 2 hours in the refrigerator.
-        Preheat grill for high heat.
-        Lightly oil the grill grate. Discard marinade. Place steaks on the grill, and cook 7 minutes on each side, or to desired doneness.",
+        instructions: "In a bowl, mix the olive oil, Worcestershire sauce, garlic, steak seasoning, red wine vinegar, basil, and Italian seasoning. Pour into a large resealable plastic bag. Pierce steaks on all sides with a fork, and place in the bag. Gently shake to coat. Seal bag and marinate steaks a minimum of 2 hours in the refrigerator.
+          Preheat grill for high heat.
+          Lightly oil the grill grate. Discard marinade. Place steaks on the grill, and cook 7 minutes on each side, or to desired doneness.",
         servings: 10)
 
         @ingredient1 = Ingredient.create!(name: "Caraway Seeds", description: "Caraway seeds are popular among our German customers as they are vital to the traditional taste of rye bread, sauerkraut, and many classic German and Eastern European dishes. These brightly flavored whole seeds will add a pop of flavor and a nice texture to homemade breads, stews, and roasts")
@@ -42,8 +41,7 @@ RSpec.describe Recipe, type: :model do
       it 'has a description' do
         expect(@recipe1.instructions).to eq("Instructions go here formatting is a bitch.")
 
-        expect(@recipe2.instructions).to eq("
-          In a bowl, mix the olive oil, Worcestershire sauce, garlic, steak seasoning, red wine vinegar, basil, and Italian seasoning. Pour into a large resealable plastic bag. Pierce steaks on all sides with a fork, and place in the bag. Gently shake to coat. Seal bag and marinate steaks a minimum of 2 hours in the refrigerator.
+        expect(@recipe2.instructions).to eq("In a bowl, mix the olive oil, Worcestershire sauce, garlic, steak seasoning, red wine vinegar, basil, and Italian seasoning. Pour into a large resealable plastic bag. Pierce steaks on all sides with a fork, and place in the bag. Gently shake to coat. Seal bag and marinate steaks a minimum of 2 hours in the refrigerator.
           Preheat grill for high heat.
           Lightly oil the grill grate. Discard marinade. Place steaks on the grill, and cook 7 minutes on each side, or to desired doneness.")
         end
