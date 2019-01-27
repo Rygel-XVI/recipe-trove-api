@@ -30,6 +30,8 @@ DELETE /api/recipes/:id
 DELETE /api/ingredients/:id
 
 
-make routes
-make serializers
-make controller
+make routes Done
+make serializers <== you are here
+make controller Done
+
+fix schema so can associate amounts of ingredients with recipes

@@ -2,9 +2,12 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :delete]
 
   def index
+    @recipes = Recipe.all
+    render json: @recipes
   end
 
   def show
+    render json: @recipe
   end
 
   def new

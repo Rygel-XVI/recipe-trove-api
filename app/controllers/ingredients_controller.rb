@@ -2,9 +2,12 @@ class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:show, :edit, :update, :delete]
 
   def index
+    @ingredients = Ingredient.all
+    render json: @ingredients
   end
 
   def show
+    render json: @ingredient
   end
 
   def new
