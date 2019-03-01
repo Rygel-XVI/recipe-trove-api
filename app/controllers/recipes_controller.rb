@@ -2,7 +2,12 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :delete]
 
   def index
-    @recipes = Recipe.all
+    if !!params[:query]
+      ingredient_list = params[:query].split(',')
+      @recipes = ingredient_list.map{|ingredient_id| Recipe.get_by_ingredient_id(ingredient_id)}
+    else
+      @recipes = Recipe.all
+    end
     render json: @recipes
   end
 

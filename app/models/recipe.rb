@@ -5,4 +5,10 @@ class Recipe < ApplicationRecord
 
   validates :name, presence: true
   validates :ingredients, presence: true
+
+# accepts an ingredient id and returns all recipes with that ingredient in it
+  def self.get_by_ingredient_id(ingredient_id)
+    Recipe.all.map{|r| r.ingredients.where(id: ingredient_id)}.uniq
+  end
+
 end

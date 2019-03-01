@@ -2,6 +2,7 @@ class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:show, :edit, :update, :delete]
 
   def index
+    # binding.pry
     @ingredients = Ingredient.all
     render json: @ingredients
   end

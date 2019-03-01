@@ -9,6 +9,8 @@
 
 @ingredient2 = Ingredient.create!(name: "Saffron, Coupe Grade Spanish", description: "This \"coupe\" grade Spanish saffron spice has powerful coloring properties and a lovely floral, grassy aroma. Due to its extremely rare nature, we were able to entice Julia Child into opening a one-pound tin for us during one of her visits to Milwaukee. Immediately upon opening, the exotic scent of these delicate flowers filled the air with their rare perfume, enchanting all of us! A signed tin remains with us as a memento of her visit.")
 
+@ingredient3 = Ingredient.create!(name: "Salt", description: "makes everything yummy but may raise your blood pressure.")
+
 @recipe1 = Recipe.new(name: "Sesame Chicken",
                           description: "If you want the perfect sesame chicken recipe this is it! You may want to increase the vinegar or lower the amount of sugar. It all depends on how sweet you want the sauce.",
                           rating: 4,
@@ -29,9 +31,9 @@ Preheat grill for high heat.
 Lightly oil the grill grate. Discard marinade. Place steaks on the grill, and cook 7 minutes on each side, or to desired doneness.",
                       servings: 10)
 
-@recipe1.ingredients << @ingredient1
+@recipe1.ingredients << @ingredient3
 @recipe1.ingredients << @ingredient2
 @recipe2.ingredients << @ingredient1
 
-@recipe1.save
-@recipe2.save
+@recipe1.save!
+@recipe2.save!
