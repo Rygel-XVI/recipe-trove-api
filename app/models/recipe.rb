@@ -10,10 +10,8 @@ class Recipe < ApplicationRecord
   def self.get_by_ingredient_id(ingredient_id)
     recipes = []
     Recipe.all.each do |r|
-      # binding.pry
       recipes.push(r) if r.ingredients.where(id: ingredient_id).present?
     end
-    # binding.pry
     recipes
   end
 
