@@ -8,7 +8,13 @@ class Recipe < ApplicationRecord
 
 # accepts an ingredient id and returns all recipes with that ingredient in it
   def self.get_by_ingredient_id(ingredient_id)
-    Recipe.all.map{|r| r.ingredients.where(id: ingredient_id)}.uniq
+    recipes = []
+    Recipe.all.each do |r|
+      # binding.pry
+      recipes.push(r) if r.ingredients.where(id: ingredient_id).present?
+    end
+    # binding.pry
+    recipes
   end
 
 end

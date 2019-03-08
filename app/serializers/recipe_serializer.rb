@@ -1,5 +1,11 @@
 class RecipeSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :rating, :servings
+  # cache
+
+  # def cache_key
+  #   [object, scope]
+  # end
+
+  attributes :id, :name, :description, :rating, :servings, :instructions
   has_many :ingredients, through: :recipe_ingredients
 
 end
