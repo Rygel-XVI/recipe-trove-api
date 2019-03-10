@@ -14,15 +14,6 @@ class RecipesController < ApplicationController
     render json: @recipes
   end
 
-  def show
-    render json: @recipe
-  end
-
-  def new
-    binding.pry
-    @recipe = Recipe.new
-  end
-
   def create
     # puts params
     # binding.pry
@@ -31,9 +22,6 @@ class RecipesController < ApplicationController
     @recipe.ingredients = ingredients
     @recipe.save
     render json: @recipe
-  end
-
-  def edit
   end
 
   def update
