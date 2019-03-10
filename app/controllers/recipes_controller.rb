@@ -3,6 +3,8 @@ class RecipesController < ApplicationController
 
   def index
     if params[:query] != 'undefined' && params[:query].present?
+
+      # separate out all this logic into the model and make it so it has to include all the ingredients
       ingredient_list = params[:query].split(',')
       @recipes = ingredient_list.map{|ingredient_id| Recipe.get_by_ingredient_id(ingredient_id.to_i)}
       @recipes.flatten!
@@ -17,10 +19,13 @@ class RecipesController < ApplicationController
   end
 
   def new
+    binding.pry
     @recipe = Recipe.new
   end
 
   def create
+    puts params
+    binding.pry
   end
 
   def edit
