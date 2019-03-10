@@ -24,8 +24,13 @@ class RecipesController < ApplicationController
   end
 
   def create
-    puts params
-    binding.pry
+    # puts params
+    # binding.pry
+    @recipe = Recipe.new(recipe_params)
+    ingredients = params[:recipe][:ingredients].map{|i| Ingredient.find(i)}
+    @recipe.ingredients = ingredients
+    @recipe.save
+    render json: @recipe
   end
 
   def edit
