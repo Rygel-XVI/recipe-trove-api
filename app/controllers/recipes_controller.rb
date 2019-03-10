@@ -15,8 +15,8 @@ class RecipesController < ApplicationController
   end
 
   def create
-    # puts params
-    # binding.pry
+
+# add contingency if no ingredients are passed in
     @recipe = Recipe.new(recipe_params)
     ingredients = params[:recipe][:ingredients].map{|i| Ingredient.find(i)}
     @recipe.ingredients = ingredients
