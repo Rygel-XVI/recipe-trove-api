@@ -7,15 +7,11 @@ class IngredientsController < ApplicationController
     render json: @ingredients
   end
 
-  def show
-    render json: @ingredient
-  end
-
-  def new
-    @ingredient = Ingredient.new
-  end
-
   def create
+    # binding.pry
+    @ingredient = Ingredient.new(ingredient_params)
+    @ingredient.save
+    render json: @ingredient
   end
 
   def edit
