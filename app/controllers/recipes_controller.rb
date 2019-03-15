@@ -27,7 +27,10 @@ class RecipesController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
+    set_recipe
+    @recipe.destroy
+    render json: @recipe
   end
 
 private
