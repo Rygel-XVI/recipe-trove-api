@@ -21,7 +21,7 @@ class IngredientsController < ApplicationController
     render json: ingredient
   end
 
-  def delete
+  def destroy
     set_ingredient
     @ingredient.destroy
     render json: @ingredient
