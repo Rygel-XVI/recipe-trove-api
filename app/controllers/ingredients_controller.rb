@@ -2,13 +2,11 @@ class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:show, :edit, :update, :delete]
 
   def index
-    # binding.pry
     @ingredients = Ingredient.all
     render json: @ingredients
   end
 
   def create
-    # binding.pry
     @ingredient = Ingredient.new(ingredient_params)
     @ingredient.save
     render json: @ingredient
@@ -18,9 +16,15 @@ class IngredientsController < ApplicationController
   end
 
   def update
+    ingredient = Ingredient.find(params[:ingredient][:id])
+    ingredient.update(ingredient_params)
+    render json: ingredient
   end
 
   def delete
+    set_ingredient
+    @ingredient.destroy
+    render json: @ingredient
   end
 
 private
